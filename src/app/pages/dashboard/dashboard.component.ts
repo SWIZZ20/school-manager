@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { MasterService } from 'src/Share/master.service';
 
 
 @Component({
@@ -36,37 +37,13 @@ export class DashboardComponent implements OnInit {
     },
   ]
 
-  public maitres=[
-    {
-      name:"Dohn",
-      prenom:"Doe",
-      classe:"SIL A",
-      Telephone:"+212604328985",
-      Email:"johndoe@gmail.com",
-      Statu:"Tutulaire"
-    },
-    {
-      name:"John",
-      prenom:"Doe",
-      classe:"SIL A",
-      Telephone:"+212604328985",
-      Email:"johndoe@gmail.com",
-      Statu:"Vacataire"
-    },
-    {
-      name:"John",
-      prenom:"Doe",
-      classe:"SIL A",
-      Telephone:"+212604328985",
-      Email:"johndoe@gmail.com",
-      Statu:"Tutulaire"
-    },
-  ]
+  public maitres=[]
 
-  constructor(private router:Router) { }
+  constructor(private router:Router, private masterSev:MasterService) { }
 
   ngOnInit() {
     this.maitres.sort();
+    this.maitres=this.masterSev.master;
   }
 
   goToSingleClass() {
