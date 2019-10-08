@@ -1,3 +1,4 @@
+import { UserProfileComponent } from './pages/user-profile/user-profile.component';
 import { NgModule } from '@angular/core';
 import { CommonModule, } from '@angular/common';
 import { BrowserModule  } from '@angular/platform-browser';
@@ -7,6 +8,7 @@ import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.compon
 import { AuthLayoutComponent } from './layouts/auth-layout/auth-layout.component';
 
 const routes: Routes =[
+  
   {
     path: '',
     redirectTo: 'dashboard',
@@ -32,7 +34,8 @@ const routes: Routes =[
   }, {
     path: '**',
     redirectTo: 'dashboard'
-  }
+  },
+  
 ];
 
 @NgModule({
